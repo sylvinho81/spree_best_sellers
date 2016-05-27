@@ -1,0 +1,35 @@
+<% config = Spree::BestSellersConfiguration.new %>
+<% if (config.has_preference?(:show_best_sellers) && config[:show_best_sellers]) && @best_sellers.present? %>
+    <div id="best-sellers" class="row" data-hook>
+      <div class="col-lg-12 col-sm-12">
+        <span class="title"><%= Spree.t('best_sellers.title')%></span>
+      </div>
+      <% @best_sellers.each do |product| %>
+          <% url = spree.product_url(product, taxon_id: @taxon.try(:id)) %>
+          <div id="product_<%= product.id %>" class="col-lg-4 col-sm-4 hero-feature text-center" itemscope itemtype="https://schema.org/Product">
+            <div class="thumbnail">
+              <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
+                  <%= link_to product_image(product, itemprop: "image"), url, itemprop: 'url', class: "link-p" %>
+                  <div class="caption prod-caption">
+                    <h4><%= link_to truncate(product.name, length: 50), url, class: 'info', itemprop: "name", title: product.name %></h4>
+                    <div class="btn-group">
+                      <div class="pull-right">
+                        <%= link_to url, class: "btn btn-primary"  do %>
+                            <i class="fa fa-shopping-cart"></i>
+                            <%=Spree.t('buttons.buy')%>
+                        <% end %>
+                      </div>
+                      <div class="pull-right">
+                        <a href="#" class="btn btn-default" itemprop="price">
+                          <%= display_price(product) %>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+      <% reset_cycle("classes") %>
+    </div>
+<% end %>

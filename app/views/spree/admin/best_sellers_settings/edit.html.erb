@@ -1,0 +1,26 @@
+<% content_for :page_title do %>
+  <%= Spree.t('best_sellers.settings.title') %>
+<% end %>
+
+<%= form_tag admin_best_sellers_settings_path, :method => :put do %>
+  <fieldset id="preferences" data-hook class="no-border-top">
+    <div class="row">
+      <div class="col-md-6">
+        <% @preferences.each do |key|
+            translation_key = 'best_sellers.settings.'+key.to_s
+            type = @config.preference_type(key) %>
+          <div class="field">
+            <%= label_tag(key, Spree.t(translation_key) + ': ') + tag(:br) if type != :boolean %>
+            <%= preference_field_tag(key, @config[key], :type => type) %>
+            <%= label_tag(key, Spree.t(translation_key)) + tag(:br) if type == :boolean %> <br />
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-actions" data-hook="buttons">
+      <%= button Spree.t('actions.update'), 'save' %>
+      <span class="or"><%= Spree.t(:or) %></span>
+      <%= button_link_to Spree.t('actions.cancel'), edit_admin_general_settings_url, icon: 'delete' %>
+    </div>
+  </fieldset>
+<% end %>

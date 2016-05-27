@@ -1,0 +1,9 @@
+es:
+  spree:
+    best_sellers:
+      title: "Best Sellers"
+      settings:
+        title: "Configuración Best Sellers"
+        show_best_sellers: "Mostrar Best Sellers en la tienda"
+        max_best_sellers: "Número máximo de Best Sellers a mostrar"
+        show_best_sellers_sidebar: "Mostrar Best Sellers en la tienda en el Sidebar"
