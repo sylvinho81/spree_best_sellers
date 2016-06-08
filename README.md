@@ -2,7 +2,6 @@ SpreeBestSellers
 ================
 
 This extension provides the possibility to show the best sellers in your shop.
-In progress. If anyone wants to participate in the development please tell me.
 
 
 
