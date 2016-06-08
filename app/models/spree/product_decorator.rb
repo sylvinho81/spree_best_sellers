@@ -20,8 +20,6 @@ Spree::Product.class_eval do
     results = results.order("total_qty DESC").limit(num_max_best_sellers)
 
     return results
-  rescue
-    Rails.logger.error("Error loading best sellers ******")
   end
 
 
