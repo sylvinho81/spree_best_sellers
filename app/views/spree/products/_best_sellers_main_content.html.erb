@@ -1,6 +1,6 @@
 <% config = Spree::BestSellersConfiguration.new %>
 <% if (config.has_preference?(:show_best_sellers) && config[:show_best_sellers]) && @best_sellers.present? %>
-    <div id="best-sellers" class="row" data-hook>
+    <div id="best-sellers" data-hook>
       <div class="col-lg-12 col-sm-12">
         <span class="title"><%= Spree.t('best_sellers.title')%></span>
       </div>
