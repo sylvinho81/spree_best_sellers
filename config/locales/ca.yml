@@ -1,0 +1,9 @@
+ca:
+  spree:
+    best_sellers:
+      title: "Els més venuts"
+      settings:
+        title: "Configuració Best Sellers"
+        show_best_sellers: "Mostra Best Sellers en la secció de productes"
+        max_best_sellers: "Màxima de Best Sellers a mostrar"
+        show_best_sellers_sidebar: "Mostra Best Sellers al sidebar"
