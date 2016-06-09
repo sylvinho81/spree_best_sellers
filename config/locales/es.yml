@@ -4,6 +4,6 @@ es:
       title: "Los más vendidos"
       settings:
         title: "Configuración Best Sellers"
-        show_best_sellers: "Mostrar Best Sellers en la tienda"
+        show_best_sellers: "Mostrar Best Sellers en la sección de productos"
         max_best_sellers: "Número máximo de Best Sellers a mostrar"
         show_best_sellers_sidebar: "Mostrar Best Sellers en la tienda en el Sidebar"
