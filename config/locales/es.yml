@@ -1,7 +1,7 @@
 es:
   spree:
     best_sellers:
-      title: "Best Sellers"
+      title: "Los más vendidos"
       settings:
         title: "Configuración Best Sellers"
         show_best_sellers: "Mostrar Best Sellers en la tienda"
