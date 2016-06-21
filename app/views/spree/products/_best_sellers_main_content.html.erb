@@ -12,6 +12,9 @@
                   <%= link_to product_image(product, itemprop: "image"), url, itemprop: 'url', class: "link-p" %>
                   <div class="caption prod-caption">
                     <h4><%= link_to truncate(product.name, length: 50), url, class: 'info', itemprop: "name", title: product.name %></h4>
+                    <% if product.description.present? %>
+                        <p><%= (truncate(strip_tags(product.description), length: 100)).html_safe %></p>
+                    <% end %>
                     <div class="btn-group">
                       <div class="pull-right">
                         <%= link_to url, class: "btn btn-primary"  do %>
